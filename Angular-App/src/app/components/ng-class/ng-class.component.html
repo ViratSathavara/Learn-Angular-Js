@@ -1,0 +1,61 @@
+<div class="w-full flex flex-col gap-10 mt-10 items-center">
+  <div
+    class="w-20 h-20 flex items-center justify-center"
+    [ngClass]="bgDiv1Color"
+  >
+    Div 1
+  </div>
+  <div class="gap-5 flex">
+    <button
+      mat-flat-button
+      class="!font-bold !bg-green-400"
+      (click)="changeColor('bg-green-400')"
+    >
+      Add Green
+    </button>
+    <button
+      mat-flat-button
+      class="!font-bold !bg-red-400"
+      (click)="changeColor('bg-red-400')"
+    >
+      Add Red
+    </button>
+  </div>
+
+  <h2 class="text-3xl font-bold">THis is my technique</h2>
+
+  <div
+    class="w-20 h-20 flex items-center justify-center"
+    [ngClass]="bgDiv2Color"
+  >
+    Div 2
+  </div>
+  <span
+    >Click to Change color from Red to Green :-
+    <input
+      type="checkbox"
+      (change)="
+        changeDiv2Color(
+          bgDiv2Color == 'bg-green-400' ? 'bg-red-400' : 'bg-green-400'
+        )
+      "
+  /></span>
+
+  <h2 class="text-3xl font-bold">THis is Tutorial technique</h2>
+  <div
+    class="w-20 h-20 flex items-center justify-center"
+    [ngClass]="isChecked == true ? 'bg-green-400' : 'bg-red-400'"
+  >
+    Div 3
+  </div>
+  <span
+    >Click to Change color from Red to Green :-
+    <input type="checkbox" [(ngModel)]="isChecked"
+  /></span>
+
+<div class="w-20 h-20 flex items-center justify-center" [ngClass]="div3Class">
+    Div 4
+</div>
+<input type="text" [(ngModel)]="div3Class" class="border">
+
+</div>
