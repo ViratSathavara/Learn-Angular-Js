@@ -1,0 +1,49 @@
+<div>
+  <h1 class="text-center mt-20 bg-gray-300">2 Way to data Binding</h1>
+  <div class="flex justify-evenly flx-row bg-amber-100 w-full">
+    <div>
+      <span class="text-3xl font-bold">1. One Way Data Binding</span>
+      <div class="mt-2">
+        <h4 class="text-2xl font-medium">I. Interpolation</h4>
+        <h2>FirstName => {{ firstName }}</h2>
+        <h2>LastName => {{ lastName }}</h2>
+      </div>
+      <div class="mt-2 flex flex-col gap-2">
+        <h4 class="text-2xl font-medium">II. Property Binding</h4>
+        <input type="text" [value]="firstName" name="" class="border-2" id="" />
+        <input
+          type="text"
+          [placeholder]="myPlaceholder"
+          class="border-2"
+          name=""
+          id=""
+        />
+        <div [class]="bgVirat" class="w-52 h-52"></div>
+        <h4 class="text-2xl font-medium">III. Event Binding</h4>
+        <div class="mt-3 flex gap-4">
+          <button
+            class="hover:cursor-pointer"
+            mat-stroked-button
+            (click)="showToMessage()"
+          >
+            Basic
+          </button>
+          <select class="border-2" (change)="changeCity($event)">
+            <option *ngFor="let hobby of hobbies" [value]="hobby">{{ hobby }}</option>
+          </select>               
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-3xl font-bold">2. Two Way Data Binding</h3>
+      <div class="flex flex-col gap-3 mt-3">
+<input type="text" [(ngModel)]="firstName" class="border">
+<input type="text" [(ngModel)]="lastName" class="border">
+<select class="border-2" [(ngModel)]="selectedHobby">
+    <option *ngFor="let hobby of hobbies" [value]="hobby">{{ hobby }}</option>
+  </select>
+  <h1 class="text-3xl">{{ selectedHobby }}</h1>  
+      </div>
+    </div>
+  </div>
+</div>
